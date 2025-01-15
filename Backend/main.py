@@ -21,11 +21,13 @@ app.add_middleware(
 )
 
 
-@app.get('/')
+@app.get("/")
 async def root():
     return {"message": "Server is running"}
 
+
 app.include_router(calculator_router, prefix="/calculate", tags=["calculate"])
+
 
 
 if __name__ == "__main__":
